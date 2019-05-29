@@ -96,6 +96,7 @@
 				<!-- devtools -->
 				<configuration>
 					<fork>true</fork>
+					<mainClass>com.xxl.api.admin.XxlApiApplication</mainClass>
 				</configuration>
 			</plugin>
 			<!-- docker -->
