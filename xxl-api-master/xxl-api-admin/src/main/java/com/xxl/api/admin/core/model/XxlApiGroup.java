@@ -1,14 +1,27 @@
 package com.xxl.api.admin.core.model;
 
 /**
+ * 接口分组类
  * Created by xuxueli on 17/3/30.
+ * @author xxl
  */
 public class XxlApiGroup {
-
+    /**
+     * 分组ID
+     */
     private String id;
-    private String projectId;  // 项目ID
-    private String name;    // 分组名称
-    private int order;      // 分组排序
+    /**
+     *  项目ID
+     */
+    private String projectId;
+    /**
+     *  分组名称
+     */
+    private String name;
+    /**
+     *  分组排序
+     */
+    private int order;
 
     public String getId() {
         return id;

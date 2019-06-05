@@ -28,6 +28,7 @@ import java.util.UUID;
 
 /**
  * Created by xuxueli on 17/5/23.
+ * @author xxl
  */
 @Controller
 @RequestMapping("/datatype")
@@ -66,10 +67,13 @@ public class XxlApiDataTypeController {
         int count = xxlApiDataTypeDao.pageListCount(start, length, bizId, name);
 
         // package result
-        Map<String, Object> maps = new HashMap<String, Object>();
-        maps.put("recordsTotal", count);		// 总记录数
-        maps.put("recordsFiltered", count);	    // 过滤后的总记录数
-        maps.put("data", list);  				// 分页列表
+        Map<String, Object> maps = new HashMap<String, Object>(20);
+        // 总记录数
+        maps.put("recordsTotal", count);
+        // 过滤后的总记录数
+        maps.put("recordsFiltered", count);
+        // 分页列表
+        maps.put("data", list);
         return maps;
     }
 

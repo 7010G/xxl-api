@@ -5,13 +5,17 @@ import java.util.List;
 
 /**
  * Created by xuxueli on 17/4/1.
+ * @author xxl
  */
 public class RequestConfig {
 
     /**
-     * Request Method
+     *  Request Method
      */
     public enum  RequestMethodEnum {
+        /**
+         *  Request Method POST,GET,PUT,DELETE,HEAD,OPTIONS,PATCH
+         */
         POST,GET,PUT,DELETE,HEAD,OPTIONS,PATCH;
     }
 
@@ -56,17 +60,27 @@ public class RequestConfig {
      * Query Param, Type
      */
     public enum  QueryParamTypeEnum {
-
+        //Query Param, Type  string
         STRING("string"),
+        // Query Param, Type  boolean
         BOOLEAN("boolean"),
+        //Query Param, Type  short
         SHORT("short"),
+        //Query Param, Type  int
         INT("int"),
+        //Query Param, Type  long
         LONG("long"),
+        // Query Param, Type  float
         FLOAT("float"),
+        //Query Param, Type  double
         DOUBLE("double"),
+        //Query Param, Type  date
         DATE("date"),
+        //Query Param, Type  datetime
         DATETIME("datetime"),
+        //Query Param, Type  json
         JSON("json"),
+        //Query Param, Type  byte
         BYTE("byte");
 
         public String title;
@@ -79,11 +93,22 @@ public class RequestConfig {
      * Query Param
      */
     public static class QueryParam {
-
-        private boolean notNull;    // 是否必填
-        private String name;        // 参数名称
-        private String type;        // 参数类型
-        private String desc;        // 参数说明
+        /**
+         * 分组ID
+         */
+        private boolean notNull;
+        /**
+         * 参数名称
+         */
+        private String name;
+        /**
+         * 参数类型
+         */
+        private String type;
+        /**
+         * 参数说明
+         */
+        private String desc;
 
         public boolean isNotNull() {
             return notNull;
@@ -122,10 +147,15 @@ public class RequestConfig {
      * Reponse Headers, Content-Type
      */
     public enum ResponseContentType{
+        //JSON响应头
         JSON("application/json;charset=UTF-8"),
+        //XML响应头
         XML("text/xml"),
+        //HTML响应头
         HTML("text/html;"),
+        //TEXT响应头
         TEXT("text/plain"),
+        //JSONP响应头
         JSONP("application/javascript");
 
         public final String type;

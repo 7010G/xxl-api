@@ -2,14 +2,22 @@ package com.xxl.api.admin.core.consistant;
 
 /**
  * Created by xuxueli on 17/6/2.
+ * @author xxl
  */
-public enum FieldTypeEnum {
 
+public enum FieldTypeEnum {
+    /**
+     *
+     */
     DEFAULT(0, "默认"),
+    /**
+     *
+     */
     ARRAY(1, "数组");
 
     private int value;
     private String title;
+
     private FieldTypeEnum(int value, String title){
         this.value = value;
         this.title = title;

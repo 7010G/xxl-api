@@ -22,7 +22,7 @@ public class CookieInterceptor extends HandlerInterceptorAdapter {
 			ModelAndView modelAndView) throws Exception {
 		
 		if (modelAndView!=null && ArrayTool.isNotEmpty(request.getCookies())) {
-			HashMap<String, Cookie> cookieMap = new HashMap<String, Cookie>();
+			HashMap<String, Cookie> cookieMap = new HashMap<String, Cookie>(20);
 			for (Cookie ck : request.getCookies()) {
 				cookieMap.put(ck.getName(), ck);
 			}

@@ -58,7 +58,7 @@ public class XxlApiGroupController {
 				}
 			}
 		}
-		if (!groupId.equals("0") && groupInfo==null) {
+		if (!"0".equals(groupId) && groupInfo==null) {
 			groupId = "-1";
 		}
 		model.addAttribute("groupId", groupId);

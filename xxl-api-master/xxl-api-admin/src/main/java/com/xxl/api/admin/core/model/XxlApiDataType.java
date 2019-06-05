@@ -3,16 +3,29 @@ package com.xxl.api.admin.core.model;
 import java.util.List;
 
 /**
+ * 数据类型类
  * Created by xuxueli on 17/6/1.
+ * @author xxl
  */
 public class XxlApiDataType {
 
     private String id;
-    private String name;        // 数据类型名称
-    private String about;       // 数据类型描述
-    private String bizId;          // 业务线ID，业务线ID，为0表示公共
-
-    private List<XxlApiDataTypeField> fieldList; // 参数列表
+    /**
+     *数据类型名称
+     */
+    private String name;
+    /**
+     * 数据类型描述
+     */
+    private String about;
+    /**
+     * 业务线ID，业务线ID，为0表示公共
+     */
+    private String bizId;
+    /**
+     * 参数列表
+     */
+    private List<XxlApiDataTypeField> fieldList;
 
     public String getId() {
         return id;

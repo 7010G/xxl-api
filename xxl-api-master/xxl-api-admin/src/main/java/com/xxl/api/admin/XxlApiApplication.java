@@ -11,7 +11,7 @@ public class XxlApiApplication {
 
 	public static void main(String[] args) {
 
-        SpringApplication.run(XxlApiApplication.class, args);
+        SpringApplication.run(XxlApiApplication.class,args);
 
 	}
 

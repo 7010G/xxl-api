@@ -70,7 +70,7 @@ public class XxlApiTestController {
 		List<Map<String, String>> requestHeaders = null;
 		List<Map<String, String>> queryParams = null;
 
-		if (!testId.equals("0")) {
+		if (!"0".equals(testId)) {
 			XxlApiTestHistory testHistory = xxlApiTestHistoryDao.load(testId);
 			if (testHistory == null) {
 				throw new RuntimeException("测试用例ID非法");
@@ -144,7 +144,7 @@ public class XxlApiTestController {
 		Map<String, String> requestHeaderMap = null;
 		List<Map<String, String>> requestHeaders = (StringTool.isNotBlank(xxlApiTestHistory.getRequestHeaders()))? JacksonUtil.readValue(xxlApiTestHistory.getRequestHeaders(), List.class):null;
 		if (requestHeaders!=null && requestHeaders.size()>0) {
-			requestHeaderMap = new HashMap<String, String>();
+			requestHeaderMap = new HashMap<String, String>(20);
 			for (Map<String, String> item: requestHeaders) {
 				requestHeaderMap.put(item.get("key"), item.get("value"));
 			}
@@ -154,7 +154,7 @@ public class XxlApiTestController {
 		Map<String, String> queryParamMap = null;
 		List<Map<String, String>> queryParams = (StringTool.isNotBlank(xxlApiTestHistory.getQueryParams()))? JacksonUtil.readValue(xxlApiTestHistory.getQueryParams(), List.class):null;
 		if (queryParams!=null && queryParams.size()>0) {
-			queryParamMap = new HashMap<String, String>();
+			queryParamMap = new HashMap<String, String>(20);
 			for (Map<String, String> item: queryParams) {
 				queryParamMap.put(item.get("key"), item.get("value"));
 			}
@@ -212,7 +212,8 @@ public class XxlApiTestController {
 			for(Map.Entry<String,String> entry : queryParamMap.entrySet()){
 				finalUrl += entry.getKey() + "=" + entry.getValue() + "&";
 			}
-			finalUrl = finalUrl.substring(0, finalUrl.length()-1);	// 后缀处理，去除 ？ 或 & 符号
+			// 后缀处理，去除 ？ 或 & 符号
+			finalUrl = finalUrl.substring(0, finalUrl.length()-1);
 		}
 		return finalUrl;
 	}

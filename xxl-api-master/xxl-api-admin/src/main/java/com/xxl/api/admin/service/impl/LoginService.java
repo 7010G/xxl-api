@@ -15,6 +15,7 @@ import java.math.BigInteger;
 
 /**
  * Created by xuxueli on 17/3/30.
+ * @author xxl
  */
 @Configuration
 public class LoginService {
@@ -32,7 +33,8 @@ public class LoginService {
     private XxlApiUser parseToken(String tokenHex){
         XxlApiUser xxlApiUser = null;
         if (tokenHex != null) {
-            String tokenJson = new String(new BigInteger(tokenHex, 16).toByteArray());      // username_password(md5)
+            // username_password(md5)
+            String tokenJson = new String(new BigInteger(tokenHex, 16).toByteArray());
             xxlApiUser = JacksonUtil.readValue(tokenJson, XxlApiUser.class);
         }
         return xxlApiUser;

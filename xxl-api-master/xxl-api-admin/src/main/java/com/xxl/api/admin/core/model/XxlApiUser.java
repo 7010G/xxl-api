@@ -2,14 +2,29 @@ package com.xxl.api.admin.core.model;
 
 /**
  * Created by xuxueli on 17/3/29.
+ * @author xxl
  */
 public class XxlApiUser {
-
-    private String id;                 // 用户ID
-    private String userName;        // 账号
-    private String password;        // 密码
-    private int type;               // 用户类型：0-普通用户、1-管理员
-    private String permissionBiz;  // 业务线权限，多个逗号分隔
+    /**
+     * 用户ID
+     */
+    private String id;
+    /**
+     * 账号
+     */
+    private String userName;
+    /**
+     *  密码
+     */
+    private String password;
+    /**
+     *  用户类型：0-普通用户、1-管理员
+     */
+    private int type;
+    /**
+     * 业务线权限，多个逗号分隔
+     */
+    private String permissionBiz;
 
     public String getId() {
         return id;

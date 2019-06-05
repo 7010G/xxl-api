@@ -3,29 +3,87 @@ package com.xxl.api.admin.core.model;
 import java.util.Date;
 
 /**
+ * 接口类
  * Created by xuxueli on 17/3/31.
+ * @author xxl
  */
 public class XxlApiDocument {
-
-    private String id;                     // 接口ID
-    private String projectId;              // 项目ID
-    private String groupId;                // 分组ID
-    private String name;                // 接口名称
-    private int status;                 // 状态：0-启用、1-维护、2-废弃
-    private int starLevel;              // 星标等级：0-普通接口、1-一星接口
-    private String requestUrl;          // Request URL：相对地址
-    private String requestMethod;       // Request Method：如POST、GET
-    private String requestHeaders;      // Request Headers：Map-JSON格式字符串
-    private String queryParams;         // Query String Parameters：VO-JSON格式字符串
-    private String responseDatatypeId;     // 响应数据类型ID
-    private String responseParams;      // Response Parameters：VO-JSON格式字符串
-    private String successRespType;     // Response Content-type：成功接口，如JSON、XML、HTML、TEXT
-    private String successRespExample;  // Response Content：成功接口
-    private String failRespType;        // Response Content-type：失败接口
-    private String failRespExample;     // Response Content：失败接口
-    private String remark;              // 备注
-    private Date addTime;               // 创建时间
-    private Date updateTime;            // 更新时间
+    /**
+     * 接口ID
+     */
+    private String id;
+    /**
+     * 项目ID
+     */
+    private String projectId;
+    /**
+     * 分组ID
+     */
+    private String groupId;
+    /**
+     *  接口名称
+     */
+    private String name;
+    /**
+     * 状态：0-启用、1-维护、2-废弃
+     */
+    private int status;
+    /**
+     *  星标等级：0-普通接口、1-一星接口
+     */
+    private int starLevel;
+    /**
+     *  Request URL：相对地址
+     */
+    private String requestUrl;
+    /**
+     *  Request Method：如POST、GET
+     */
+    private String requestMethod;
+    /**
+     * Request Headers：Map-JSON格式字符串
+     */
+    private String requestHeaders;
+    /**
+     * Query String Parameters：VO-JSON格式字符串
+     */
+    private String queryParams;
+    /**
+     * 响应数据类型ID
+     */
+    private String responseDatatypeId;
+    /**
+     *  Response Parameters：VO-JSON格式字符串
+     */
+    private String responseParams;
+    /**
+     * Response Content-type：成功接口，如JSON、XML、HTML、TEXT
+     */
+    private String successRespType;
+    /**
+     * Response Content：成功接口
+     */
+    private String successRespExample;
+    /**
+     *  Response Content-type：失败接口
+     */
+    private String failRespType;
+    /**
+     *  Response Content：失败接口
+     */
+    private String failRespExample;
+    /**
+     * 备注
+     */
+    private String remark;
+    /**
+     *  创建时间
+     */
+    private Date addTime;
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
 
     public String getId() {
         return id;

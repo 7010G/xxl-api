@@ -23,9 +23,9 @@ import java.util.Map;
 public class JacksonUtil {
 	private static Logger logger = LoggerFactory.getLogger(JacksonUtil.class);
 
-    private final static ObjectMapper objectMapper = new ObjectMapper();
+    private final static ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     public static ObjectMapper getInstance() {
-        return objectMapper;
+        return OBJECT_MAPPER;
     }
 
     /**
@@ -70,7 +70,8 @@ public class JacksonUtil {
     }
     public static <T> T readValueRefer(String jsonStr, TypeReference typeReference) {
     	try {
-			return getInstance().readValue(jsonStr, typeReference);		// new TypeReference<T>() { }
+			// new TypeReference<T>() { }
+			return getInstance().readValue(jsonStr, typeReference);
 		} catch (JsonParseException e) {
 			logger.error(e.getMessage(), e);
 		} catch (JsonMappingException e) {
@@ -83,7 +84,7 @@ public class JacksonUtil {
 
     public static void main(String[] args) {
 		try {
-			Map<String, String> map = new HashMap<String, String>();
+			Map<String, String> map = new HashMap<String, String>(20);
 			map.put("aaa", "111");
 			map.put("bbb", "222");
 			String json = writeValueAsString(map);

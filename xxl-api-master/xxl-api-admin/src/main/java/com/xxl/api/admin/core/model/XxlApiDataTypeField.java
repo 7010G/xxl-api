@@ -1,18 +1,37 @@
 package com.xxl.api.admin.core.model;
 
 /**
+ * 字段类
  * Created by xuxueli on 17/6/1.
+ * @author xxl
  */
 public class XxlApiDataTypeField {
 
     private String id;
-    private String parentDatatypeId;   // 所属，数据类型ID
-    private String fieldName;       // 字段名称
-    private String fieldAbout;      // 字段描述
-    private String fieldDatatypeId;    // 字段数据类型ID
-    private int fieldType;          // 字段形式：0=默认、1=数组   @see FieldTypeEnum
+    /**
+     *  所属，数据类型ID
+     */
+    private String parentDatatypeId;
+    /**
+     *  字段名称
+     */
+    private String fieldName;
+    /**
+     * 字段描述
+     */
+    private String fieldAbout;
+    /**
+     *  字段数据类型ID
+     */
+    private String fieldDatatypeId;
+    /**
+     * 字段形式：0=默认、1=数组   @see FieldTypeEnum
+     */
+    private int fieldType;
 
-    // fieldDatatype dto
+    /**
+     * fieldDatatype dto
+     */
     private XxlApiDataType fieldDatatype;
 
     public String getId() {

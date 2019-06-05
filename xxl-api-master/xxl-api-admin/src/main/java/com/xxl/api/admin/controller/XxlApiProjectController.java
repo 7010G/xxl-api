@@ -58,13 +58,16 @@ public class XxlApiProjectController {
 										String name, String bizId) {
 		// page list
 		List<XxlApiProject> list = xxlApiProjectDao.pageList(start, length, name, bizId);
-		int list_count = xxlApiProjectDao.pageListCount(start, length, name, bizId);
+		int listCount = xxlApiProjectDao.pageListCount(start, length, name, bizId);
 
 		// package result
-		Map<String, Object> maps = new HashMap<String, Object>();
-		maps.put("recordsTotal", list_count);		// 总记录数
-		maps.put("recordsFiltered", list_count);	// 过滤后的总记录数
-		maps.put("data", list);  					// 分页列表
+		Map<String, Object> maps = new HashMap<String, Object>(20);
+		// 总记录数
+		maps.put("recordsTotal", listCount);
+		// 过滤后的总记录数
+		maps.put("recordsFiltered", listCount);
+		// 分页列表
+		maps.put("data", list);
 		return maps;
 	}
 

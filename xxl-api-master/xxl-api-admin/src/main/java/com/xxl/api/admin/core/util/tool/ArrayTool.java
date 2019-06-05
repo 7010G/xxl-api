@@ -2,6 +2,9 @@ package com.xxl.api.admin.core.util.tool;
 
 import java.lang.reflect.Array;
 
+/**
+ * @author xxl
+ */
 public class ArrayTool {
 
     public static final int INDEX_NOT_FOUND = -1;
@@ -25,14 +28,15 @@ public class ArrayTool {
         return indexOf(array, objectToFind) != INDEX_NOT_FOUND;
     }
 
+    @SuppressWarnings("AlibabaAvoidComplexCondition")
     public static int indexOf(final Object[] array, final Object objectToFind) {
         if (isEmpty(array)) {
             return INDEX_NOT_FOUND;
         }
         for (int i = 0; i < array.length; i++) {
-            if ((objectToFind == null && array[i] == null)
-                    || (objectToFind != null && objectToFind.equals(array[i]) )
-                    ) {
+            if (objectToFind == null && array[i] == null) {
+                return i;
+            }else if (objectToFind != null && objectToFind.equals(array[i])){
                 return i;
             }
         }

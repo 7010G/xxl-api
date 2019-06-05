@@ -1,17 +1,39 @@
 package com.xxl.api.admin.core.model;
 
 /**
+ * 项目类
  * Created by xuxueli on 17/3/30.
+ * @author xxl
  */
 public class XxlApiProject {
-
-    private String id;                 // 项目ID
-    private String name;            // 项目名称
-    private String desc;            // 项目描述
-    private String baseUrlProduct;  // 根地址(线上)
-    private String baseUrlPpe;      // 根地址(预发布)
-    private String baseUrlQa;       // 根地址(测试)
-    private String bizId;              // 业务线ID
+    /**
+     *  项目ID
+     */
+    private String id;
+    /**
+     * 项目名称
+     */
+    private String name;
+    /**
+     *  项目描述
+     */
+    private String desc;
+    /**
+     * 根地址(线上)
+     */
+    private String baseUrlProduct;
+    /**
+     * 根地址(预发布)
+     */
+    private String baseUrlPpe;
+    /**
+     * 根地址(测试)
+     */
+    private String baseUrlQa;
+    /**
+     * 业务线ID
+     */
+    private String bizId;
 
     public String getId() {
         return id;

@@ -42,7 +42,8 @@ public class PermissionInterceptor extends HandlerInterceptorAdapter {
 		if (needLogin) {
 			XxlApiUser loginUser = loginService.ifLogin(request);
 			if (loginUser == null) {
-				response.sendRedirect(request.getContextPath() + "/toLogin");	//request.getRequestDispatcher("/toLogin").forward(request, response);
+				//request.getRequestDispatcher("/toLogin").forward(request, response);
+				response.sendRedirect(request.getContextPath() + "/toLogin");
 				return false;
 			}
 			if (needAdminuser && loginUser.getType()!=1) {

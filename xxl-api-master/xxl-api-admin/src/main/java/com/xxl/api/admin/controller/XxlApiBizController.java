@@ -21,6 +21,7 @@ import java.util.UUID;
 
 /**
  * Created by xuxueli on 17/5/23.
+ * @author xxl
  */
 @Controller
 @RequestMapping("/biz")
@@ -47,13 +48,16 @@ public class XxlApiBizController {
                                         String bizName) {
         // page list
         List<XxlApiBiz> list = xxlApiBizDao.pageList(start, length, bizName);
-        int list_count = xxlApiBizDao.pageListCount(start, length, bizName);
+        int listCount = xxlApiBizDao.pageListCount(start, length, bizName);
 
         // package result
-        Map<String, Object> maps = new HashMap<String, Object>();
-        maps.put("recordsTotal", list_count);		// 总记录数
-        maps.put("recordsFiltered", list_count);	// 过滤后的总记录数
-        maps.put("data", list);  					// 分页列表
+        Map<String, Object> maps = new HashMap<String, Object>(20);
+        // 总记录数
+        maps.put("recordsTotal", listCount);
+        // 过滤后的总记录数
+        maps.put("recordsFiltered", listCount);
+        // 分页列表
+        maps.put("data", list);
         return maps;
     }
 

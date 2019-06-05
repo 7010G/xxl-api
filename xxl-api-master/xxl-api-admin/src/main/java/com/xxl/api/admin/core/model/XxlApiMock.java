@@ -1,15 +1,31 @@
 package com.xxl.api.admin.core.model;
 
 /**
+ * 模拟响应类型Mock类
  * Created by xuxueli on 17/4/1.
+ * @author xxl
  */
 public class XxlApiMock {
-
+    /**
+     *Mock ID
+     */
     private String id;
-    private String documentId;         // 接口ID
+    /**
+     * 接口ID
+     */
+    private String documentId;
+    /**
+     * UUID
+     */
     private String uuid;
-    private String respType;        // Response Content-type：如JSON、XML、HTML、TEXT、JSONP
-    private String respExample;     // Response Content
+    /**
+     * 相应类型
+     */
+    private String respType;
+    /**
+     *响应正文
+     */
+    private String respExample;
 
     public String getId() {
         return id;

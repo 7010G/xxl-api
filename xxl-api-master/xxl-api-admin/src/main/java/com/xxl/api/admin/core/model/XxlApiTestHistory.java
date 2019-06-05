@@ -3,19 +3,47 @@ package com.xxl.api.admin.core.model;
 import java.util.Date;
 
 /**
+ * 接口测试类
  * Created by xuxueli on 17/4/4.
+ * @author xxl
  */
 public class XxlApiTestHistory {
-
+    /**
+     *测试类ID
+     */
     private String id;
-    private String documentId;             // 接口ID
-    private Date addTime;               // 创建时间
-    private Date updateTime;            // 更新时间
-    private String requestUrl;          // Request URL：相对地址
-    private String requestMethod;       // Request Method：如POST、GET
-    private String requestHeaders;      // Request Headers：Map-JSON格式字符串
-    private String queryParams;         // Query String Parameters：VO-JSON格式字符串
-    private String respType;            // Response Content-type
+    /**
+     *  接口ID
+     */
+    private String documentId;
+    /**
+     * 创建时间
+     */
+    private Date addTime;
+    /**
+     * 更新时间
+     */
+    private Date updateTime;
+    /**
+     *  Request URL：相对地址
+     */
+    private String requestUrl;
+    /**
+     * Request Method：如POST、GET
+     */
+    private String requestMethod;
+    /**
+     * Request Headers：Map-JSON格式字符串
+     */
+    private String requestHeaders;
+    /**
+     * Query String Parameters：VO-JSON格式字符串
+     */
+    private String queryParams;
+    /**
+     *  Response Content-type
+     */
+    private String respType;
 
     public String getId() {
         return id;

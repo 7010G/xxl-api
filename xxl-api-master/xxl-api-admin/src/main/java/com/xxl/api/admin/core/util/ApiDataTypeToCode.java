@@ -9,15 +9,16 @@ import java.util.*;
 
 /**
  * Created by xuxueli on 17/6/19.
+ * @author xxl
  */
 public class ApiDataTypeToCode {
 
     public static void main(String[] args) {
 
         // base data-type
-        XxlApiDataType StringType = new XxlApiDataType();
-        StringType.setName("String");
-        StringType.setAbout("字符串类型");
+        XxlApiDataType stringType = new XxlApiDataType();
+        stringType.setName("String");
+        stringType.setAbout("字符串类型");
 
         // field
         List<XxlApiDataTypeField> fieldList = new ArrayList<XxlApiDataTypeField>();
@@ -26,14 +27,14 @@ public class ApiDataTypeToCode {
         field1.setFieldName("name");
         field1.setFieldAbout("姓名");
         field1.setFieldType(0);
-        field1.setFieldDatatype(StringType);
+        field1.setFieldDatatype(stringType);
         fieldList.add(field1);
 
         XxlApiDataTypeField field2 = new XxlApiDataTypeField();
         field2.setFieldName("otherNames");
         field2.setFieldAbout("其他别名");
         field2.setFieldType(1);
-        field2.setFieldDatatype(StringType);
+        field2.setFieldDatatype(stringType);
         fieldList.add(field2);
 
         // dto
@@ -65,7 +66,7 @@ public class ApiDataTypeToCode {
             for (XxlApiDataTypeField field: apiDataTypeDTO.getFieldList()) {
                 String fieldTypeImportItem = field.getFieldDatatype().getName();
 
-                if (fieldTypeImportItem!=null && fieldTypeImportItem.equalsIgnoreCase("date")) {
+                if (fieldTypeImportItem!=null && "date".equalsIgnoreCase(fieldTypeImportItem)) {
                     String importItem = "import java.util.Date;";
                     importSet.add(importItem);
                     sb.append(importItem + "\r\n");
@@ -156,23 +157,23 @@ public class ApiDataTypeToCode {
      */
     private static String matchJavaType(String paramDataType) {
 
-        if(paramDataType.equalsIgnoreCase("string")){
+        if("string".equalsIgnoreCase(paramDataType)){
             return "String";
-        } else if(paramDataType.equalsIgnoreCase("boolean")){
+        } else if("boolean".equalsIgnoreCase(paramDataType)){
             return "boolean";
-        } else if(paramDataType.equalsIgnoreCase("short")){
+        } else if("short".equalsIgnoreCase(paramDataType)){
             return "short";
-        } else if(paramDataType.equalsIgnoreCase("int")){
+        } else if("int".equalsIgnoreCase(paramDataType)){
             return "int";
-        } else if(paramDataType.equalsIgnoreCase("long")){
+        } else if("long".equalsIgnoreCase(paramDataType)){
             return "long";
-        } else if(paramDataType.equalsIgnoreCase("float")){
+        } else if("float".equalsIgnoreCase(paramDataType)){
             return "float";
-        } else if(paramDataType.equalsIgnoreCase("double")){
+        } else if("double".equalsIgnoreCase(paramDataType)){
             return "double";
-        } else if(paramDataType.equalsIgnoreCase("date") || paramDataType.equalsIgnoreCase("datetime")) {
+        } else if("date".equalsIgnoreCase(paramDataType) || "datetime".equalsIgnoreCase(paramDataType)) {
             return "Date";
-        } else if(paramDataType.equalsIgnoreCase("byte")){
+        } else if("byte".equalsIgnoreCase(paramDataType)){
             return "byte";
         }
 

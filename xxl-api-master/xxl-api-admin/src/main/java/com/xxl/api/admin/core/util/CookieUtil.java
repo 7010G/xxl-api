@@ -10,9 +10,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class CookieUtil {
 
-	// 默认缓存时间,单位/秒, 2H
+	/**
+	 * 默认缓存时间,单位/秒, 2H
+	 */
 	private static final int COOKIE_MAX_AGE = 60 * 60 * 2;
-	// 保存路径,根路径
+	/**
+	 * 保存路径,根路径
+	 */
 	private static final String COOKIE_PATH = "/";
 
 	/**
@@ -69,9 +73,9 @@ public class CookieUtil {
 	 * @param key
 	 */
 	private static Cookie get(HttpServletRequest request, String key) {
-		Cookie[] arr_cookie = request.getCookies();
-		if (arr_cookie != null && arr_cookie.length > 0) {
-			for (Cookie cookie : arr_cookie) {
+		Cookie[] arrCookie = request.getCookies();
+		if (arrCookie != null && arrCookie.length > 0) {
+			for (Cookie cookie : arrCookie) {
 				if (cookie.getName().equals(key)) {
 					return cookie;
 				}

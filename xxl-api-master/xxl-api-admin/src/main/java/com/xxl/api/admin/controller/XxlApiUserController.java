@@ -34,7 +34,14 @@ public class XxlApiUserController {
 	private IXxlApiUserDao xxlApiUserDao;
 	@Resource
 	private IXxlApiBizDao xxlApiBizDao;
-
+	/**
+	 * 密码最小长度
+	 */
+	private int minLength=4;
+	/**
+	 * 密码最大长度
+	 */
+	private int maxLength=50;
 	@RequestMapping
     @PermessionLimit(superUser = true)
 	public String index(Model model) {
@@ -53,13 +60,16 @@ public class XxlApiUserController {
 										String userName, int type) {
 		// page list
 		List<XxlApiUser> list = xxlApiUserDao.pageList(start, length, userName, type);
-		int list_count = xxlApiUserDao.pageListCount(start, length, userName, type);
+		int listCount = xxlApiUserDao.pageListCount(start, length, userName, type);
 
 		// package result
-		Map<String, Object> maps = new HashMap<String, Object>();
-		maps.put("recordsTotal", list_count);		// 总记录数
-		maps.put("recordsFiltered", list_count);	// 过滤后的总记录数
-		maps.put("data", list);  					// 分页列表
+		Map<String, Object> maps = new HashMap<String, Object>(20);
+		// 总记录数
+		maps.put("recordsTotal", listCount);
+		// 过滤后的总记录数
+		maps.put("recordsFiltered", listCount);
+		// 分页列表
+		maps.put("data", list);
 		return maps;
 	}
 
@@ -107,7 +117,7 @@ public class XxlApiUserController {
 
 		// update param
 		if (StringTool.isNotBlank(xxlApiUser.getPassword())) {
-			if (!(xxlApiUser.getPassword().length()>=4 && xxlApiUser.getPassword().length()<=50)) {
+			if (!(xxlApiUser.getPassword().length()>=minLength && xxlApiUser.getPassword().length()<=maxLength)) {
 				return new ReturnT<String>(ReturnT.FAIL.getCode(), "密码长度限制为4~50");
 			}
 			// passowrd md5
@@ -148,7 +158,7 @@ public class XxlApiUserController {
 		if (StringTool.isBlank(password)){
 			return new ReturnT<String>(ReturnT.FAIL.getCode(), "密码不可为空");
 		}
-		if (!(password.length()>=4 && password.length()<=100)) {
+		if (!(password.length()>=minLength && password.length()<=maxLength)) {
 			return new ReturnT<String>(ReturnT.FAIL.getCode(), "密码长度限制为4~50");
 		}
 		String md5Password = DigestUtils.md5DigestAsHex(password.getBytes());

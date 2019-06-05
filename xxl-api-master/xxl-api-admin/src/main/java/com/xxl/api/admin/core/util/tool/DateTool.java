@@ -18,7 +18,9 @@ import java.util.Map;
  */
 public class DateTool {
 
-    // ---------------------- format parse ----------------------
+    /**
+     * format parse
+     */
     private static Logger logger = LoggerFactory.getLogger(DateTool.class);
 
     private static final String DATE_FORMAT = "yyyy-MM-dd";
@@ -37,12 +39,12 @@ public class DateTool {
 
         synchronized (dateFormatThreadLocal) {
             if (dateFormatMap == null) {
-                dateFormatMap = new HashMap<String, DateFormat>();
+                dateFormatMap = new HashMap<String, DateFormat>(20);
             }
             dateFormatMap.put(pattern, new SimpleDateFormat(pattern));
             dateFormatThreadLocal.set(dateFormatMap);
         }
-
+        dateFormatThreadLocal.remove();
         return dateFormatMap.get(pattern);
     }
 
