@@ -15,7 +15,7 @@ public interface IXxlApiUserDao {
     /**
      * 添加用户
      * @param xxlApiUser 用户对象
-     * @return ID
+     * @return 影响行数
      */
     public int add(XxlApiUser xxlApiUser);
 

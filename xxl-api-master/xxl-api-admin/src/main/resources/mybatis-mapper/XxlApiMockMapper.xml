@@ -19,7 +19,7 @@
 		t."resp_example"
 	</sql>
 
-	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiMock" useGeneratedKeys="true" keyProperty="id" >
+	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiMock"  >
 		INSERT INTO xxl_api_mock (
 			"id",
 			"document_id",

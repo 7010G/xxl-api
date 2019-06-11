@@ -15,7 +15,7 @@ public interface IXxlApiProjectDao {
     /**
      * 添加项目
      * @param xxlApiProject 项目对象
-     * @return ID
+     * @return 影响行数
      */
     public int add(XxlApiProject xxlApiProject);
 

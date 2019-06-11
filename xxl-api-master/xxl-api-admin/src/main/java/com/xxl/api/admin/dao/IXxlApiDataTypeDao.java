@@ -16,7 +16,7 @@ public interface IXxlApiDataTypeDao {
     /**
      * 添加数据类型
      * @param xxlApiDataType 数据类型对象
-     * @return ID
+     * @return 影响行数
      */
     public int add(XxlApiDataType xxlApiDataType);
 

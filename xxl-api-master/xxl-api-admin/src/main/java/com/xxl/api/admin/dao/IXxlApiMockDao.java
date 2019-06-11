@@ -15,7 +15,7 @@ public interface IXxlApiMockDao {
     /**
      * 添加Mock类型
      * @param xxlApiMock Mock对象
-     * @return ID
+     * @return 影响行数
      */
     public int add(XxlApiMock xxlApiMock);
 

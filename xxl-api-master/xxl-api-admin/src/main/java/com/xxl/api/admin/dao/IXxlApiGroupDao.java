@@ -15,7 +15,7 @@ public interface IXxlApiGroupDao {
     /**
      * 添加分组
      * @param xxlApiGroup 分组对象
-     * @return ID
+     * @return 影响行数
      */
     public int add(XxlApiGroup xxlApiGroup);
 

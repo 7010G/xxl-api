@@ -15,7 +15,7 @@ public interface IXxlApiDocumentDao {
     /**
      * 添加接口
       * @param xxlApiDocument 接口对象
-     * @return ID
+     * @return 影响行数
      */
     public int add(XxlApiDocument xxlApiDocument);
 

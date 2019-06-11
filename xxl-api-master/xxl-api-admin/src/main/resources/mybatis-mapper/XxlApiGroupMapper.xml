@@ -17,7 +17,7 @@
 		t.order
 	</sql>
 
-	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiGroup" useGeneratedKeys="true" keyProperty="id" >
+	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiGroup">
 		INSERT INTO xxl_api_group (
 			"id",
 			"project_id",

@@ -15,7 +15,7 @@ public interface IXxlApiDataTypeFieldDao {
     /**
      * 添加字段
      * @param xxlApiDataTypeFieldList 字段集合
-     * @return ID
+     * @return 影响行数
      */
     public int add(List<XxlApiDataTypeField> xxlApiDataTypeFieldList);
 

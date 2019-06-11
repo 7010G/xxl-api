@@ -23,7 +23,7 @@
 		t.biz_id
 	</sql>
 
-	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiProject" useGeneratedKeys="true" keyProperty="id" >
+	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiProject">
 		INSERT INTO xxl_api_project (
 			"id",
 			"name",

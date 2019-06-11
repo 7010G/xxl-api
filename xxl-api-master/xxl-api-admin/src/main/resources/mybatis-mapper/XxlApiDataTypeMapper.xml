@@ -17,7 +17,7 @@
 		t."biz_id"
 	</sql>
 
-	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiDataType" useGeneratedKeys="true" keyProperty="id" >
+	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiDataType">
 		INSERT INTO xxl_api_datatype (
 			"id",
 			"name",

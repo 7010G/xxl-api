@@ -27,7 +27,7 @@
 		t."resp_type"
 	</sql>
 
-	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiTestHistory" useGeneratedKeys="true" keyProperty="id" >
+	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiTestHistory" >
 		INSERT INTO xxl_api_test_history (
 		    "id",
 			"document_id",

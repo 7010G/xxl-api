@@ -15,7 +15,7 @@ public interface IXxlApiTestHistoryDao {
     /**
      * 添加接口测试数据
      * @param xxlApiTestHistory 接口测试对象
-     * @return ID
+     * @return 影响行数
      */
     public int add(XxlApiTestHistory xxlApiTestHistory);
 

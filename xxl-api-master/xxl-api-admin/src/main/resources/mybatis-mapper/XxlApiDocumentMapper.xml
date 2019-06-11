@@ -47,7 +47,7 @@
 		t."update_time"
 	</sql>
 
-	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiDocument" useGeneratedKeys="true" keyProperty="id" >
+	<insert id="add" parameterType="com.xxl.api.admin.core.model.XxlApiDocument" >
 		INSERT INTO xxl_api_document (
 			"id",
 			"project_id",
