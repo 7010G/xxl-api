@@ -144,7 +144,7 @@
                             </div>
                             <label class="col-sm-1 control-label">值</label>
                             <div class="col-sm-5 item">
-                                <input type="text" class="form-control value">
+                                <textarea type="text" class="form-control value"></textarea>
                             </div>
                             <button type="button" class="col-sm-1 btn btn-box-tool delete" ><i class="fa fa-fw fa-close"></i></button>
                         </div>
@@ -160,7 +160,7 @@
                                     </div>
                                     <label class="col-sm-1 control-label">值</label>
                                     <div class="col-sm-5 item">
-                                        <input type="text" class="form-control value" value="<#if testId !="0">${item.value}<#else></#if>" >
+                                        <textarea type="text" class="form-control value" ><#if testId !="0">${item.value}<#else></#if></textarea>
                                     </div>
                                     <button type="button" class="col-sm-1 btn btn-box-tool delete" ><i class="fa fa-fw fa-close"></i></button>
                                 </div>

@@ -83,7 +83,7 @@ public class DateTool {
     }
 
     /**
-     * parse date string, like "yyyy-MM-dd HH:mm:s"
+     * parse date string, like "yyyy-MM-dd"
      *
      * @param dateString
      * @return

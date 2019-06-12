@@ -19,11 +19,11 @@ public class XxlApiTestHistory {
     /**
      * 创建时间
      */
-    private Date addTime;
+    private String addTime;
     /**
      * 更新时间
      */
-    private Date updateTime;
+    private String updateTime;
     /**
      *  Request URL：相对地址
      */
@@ -61,19 +61,19 @@ public class XxlApiTestHistory {
         this.documentId = documentId;
     }
 
-    public Date getAddTime() {
+    public String getAddTime() {
         return addTime;
     }
 
-    public void setAddTime(Date addTime) {
+    public void setAddTime(String addTime) {
         this.addTime = addTime;
     }
 
-    public Date getUpdateTime() {
+    public String getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(Date updateTime) {
+    public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
     }
 
@@ -115,5 +115,20 @@ public class XxlApiTestHistory {
 
     public void setRespType(String respType) {
         this.respType = respType;
+    }
+
+    @Override
+    public String toString() {
+        return "XxlApiTestHistory{" +
+                "id='" + id + '\'' +
+                ", documentId='" + documentId + '\'' +
+                ", addTime=" + addTime +
+                ", updateTime=" + updateTime +
+                ", requestUrl='" + requestUrl + '\'' +
+                ", requestMethod='" + requestMethod + '\'' +
+                ", requestHeaders='" + requestHeaders + '\'' +
+                ", queryParams='" + queryParams + '\'' +
+                ", respType='" + respType + '\'' +
+                '}';
     }
 }
