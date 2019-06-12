@@ -240,10 +240,9 @@ $(function() {
 
 		// url
 		var url = base_url + "/test/add";
-		if (testId > 0) {
+		if (testId != '0') {
 			url = base_url + "/test/update";
 		}
-
 		$.post(url, params, function(data, status) {
 			if (data.code == "200") {
 				if (testId == 0 && data.content>0) {
