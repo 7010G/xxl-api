@@ -267,6 +267,7 @@ public class XxlApiTestController {
             }
             logger.info("http statusCode error, statusCode:" + response.getStatusLine().getStatusCode());
         } catch (Exception e) {
+            
             responseContent = "请求异常：" + ThrowableUtil.toString(e);
         } finally {
             if (remoteRequest != null) {
