@@ -198,8 +198,9 @@ $(function() {
 		}
 		$('#documentList').find('tbody tr').each(function(){
 			var requestUrl = $(this).attr('requestUrl').toLowerCase();
+			var documentName = $(this).attr('documentName').toLowerCase();
 			if (searchUrl) {
-				if (requestUrl.indexOf(searchUrl) != -1) {
+				if (requestUrl.indexOf(searchUrl) != -1 || documentName.indexOf(searchUrl) != -1) {
 					$(this).show();
 				} else {
 					$(this).hide();

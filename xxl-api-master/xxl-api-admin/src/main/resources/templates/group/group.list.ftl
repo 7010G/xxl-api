@@ -111,8 +111,8 @@
                                     <thead>
                                         <tr>
                                             <th width="5%" ><i class="fa fa-star text-yellow"></i></th>
-                                            <th width="35%" >URL</th>
-                                            <th width="25%" >名称</th>
+                                            <th width="25%" >URL</th>
+                                            <th width="35%" >名称</th>
                                             <th width="17%" >分组</th>
                                             <th width="18%" >操作</th>
                                         </tr>
@@ -120,7 +120,7 @@
                                     <tbody>
                                         <#if documentList?exists && documentList?size gt 0>
                                             <#list documentList as document>
-                                                <tr requestUrl="${document.requestUrl}" >
+                                                <tr requestUrl="${document.requestUrl}"  documentName="${document.name}" >
                                                     <td class="mailbox-star">
                                                         <a href="#" class="markStar" _starLevel="${document.starLevel}" _id="${document.id}" >
                                                             <#if document.starLevel == 1><i class="fa fa-star text-yellow"></i>
@@ -128,7 +128,7 @@
                                                             </#if>
                                                         </a>
                                                     </td>
-                                                    <td class="mailbox-attachment" title="${document.requestUrl}" >
+                                                    <td class="mailbox-attachment" title="${document.requestUrl}">
                                                         <span class="label label-success">${document.requestMethod}</span>&nbsp;&nbsp;<#if document.requestUrl?length gt 25>${document.requestUrl?substring(0, 25)}...<#else>${document.requestUrl}</#if>
                                                     </td>
                                                     <td class="mailbox-name" title="${document.name}" >
@@ -136,7 +136,7 @@
                                                         <#elseif document.status==1><i class="fa fa-circle-o text-yellow"></i>
                                                         <#else><i class="fa fa-circle-o text-light-gray"></i></#if>
                                                         <a href="${request.contextPath}/document/detailPage?id=${document.id}" >
-                                                            <#if document.name?length gt 12>${document.name?substring(0, 12)}<#else>${document.name}</#if>
+                                                            <#if document.name?length gt 50>${document.name?substring(0, 50)}<#else>${document.name}</#if>
                                                         </a>
                                                     </td>
                                                     <td class="mailbox-date">
