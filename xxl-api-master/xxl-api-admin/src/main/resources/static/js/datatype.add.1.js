@@ -75,7 +75,7 @@ $(function() {
 	// jquery.validate 自定义校验 “长度1-100位的大小写字母、数字”
 	jQuery.validator.addMethod("dataTypeName", function(value, element) {
 		var length = value.length;
-		var valid = /^[a-zA-Z0-9]{1,100}$/;
+		var valid = /^[a-zA-Z0-9_]{1,100}$/;
 		return this.optional(element) || valid.test(value);
 	}, "正确格式为：长度1-100位的大小写字母和数字组成");
 
