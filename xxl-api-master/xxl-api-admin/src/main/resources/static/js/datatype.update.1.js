@@ -69,7 +69,19 @@ $(function() {
 		$('#queryParams_parent').append(html);
 		initSelectTag();
 	});
-
+//生成UUID
+	function generate_uuid (){
+		var d = new Date().getTime();
+		if(window.performance && typeof window.performance.now === "function"){
+			d += performance.now(); //use high-precision timer if available
+		}
+		var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+			var r = (d + Math.random()*16)%16 | 0;
+			d = Math.floor(d/16);
+			return (c =='x' ? r : (r&0x3|0x8)).toString(16);
+		});
+		return uuid;
+	}
 	/**
 	 * 请求参数，删除一行
 	 */
@@ -129,6 +141,7 @@ $(function() {
 			var queryParamList = new Array();
 			if ($('#queryParams_parent').find('.queryParams_item').length > 0) {
 				$('#queryParams_parent').find('.queryParams_item').each(function () {
+					var id=generate_uuid();
 					var fieldName = $(this).find('.fieldName').val();
 					var fieldAbout = $(this).find('.fieldAbout').val();
 					var fieldDatatypeId = $(this).find('.fieldDatatypeId').val();
@@ -161,6 +174,7 @@ $(function() {
 					}
 
 					queryParamList.push({
+						'id':id,
 						'fieldName':fieldName,
 						'fieldAbout':fieldAbout,
 						'fieldDatatypeId':fieldDatatypeId,
