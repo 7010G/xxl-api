@@ -123,7 +123,7 @@
                     <li class="nav-click <#if pageName == "bizList">active</#if>" ><a href="${request.contextPath}/biz"><i class="fa fa-circle-o text-red"></i> <span>业务线管理</span></a></li>
 					<li class="nav-click <#if pageName == "userList">active</#if>" ><a href="${request.contextPath}/user"><i class="fa fa-circle-o text-red"></i> <span>用户管理</span></a></li>
 				</#if>
-				<li class="nav-click <#if pageName == "help">active</#if>" ><a href="${request.contextPath}/help"><i class="fa fa-circle-o text-red"></i><span>使用教程</span></a></li>
+				<#--<li class="nav-click <#if pageName == "help">active</#if>" ><a href="${request.contextPath}/help"><i class="fa fa-circle-o text-red"></i><span>使用教程</span></a></li>-->
 			</ul>
 		</section>
 		<!-- /.sidebar -->
@@ -132,11 +132,11 @@
 
 <#macro commonFooter >
 	<footer class="main-footer">
-        Powered by <b>XXL-API</b> 1.1.2-SNAPSHOT
+        Powered by <b>XXL-API</b> 1.1.4-SNAPSHOT
 		<div class="pull-right hidden-xs">
             <strong>Copyright &copy; 2015-${.now?string('yyyy')} &nbsp;
                 <a href="http://www.xuxueli.com/" target="_blank" >xuxueli</a>&nbsp;
-                <a href="https://github.com/xuxueli/xxl-api" target="_blank" >github</a>
+                <a href="https://github.com/7010G/xxl-api" target="_blank" >github</a>
             </strong><!-- All rights reserved. -->
 		</div>
 	</footer>

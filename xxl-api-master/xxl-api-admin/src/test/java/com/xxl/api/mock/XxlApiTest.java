@@ -16,8 +16,12 @@ public class XxlApiTest {
 	public void test(){
 
 		System.out.println(UUID.randomUUID().toString());
+		int a=0;
+		for (int i = 1; i < 365; i++) {
+			a+=i;
 
-
+		}
+		System.out.println(a);
 	}
 
 

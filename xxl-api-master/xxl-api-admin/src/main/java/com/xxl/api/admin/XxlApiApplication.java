@@ -9,8 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class XxlApiApplication {
 
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-        SpringApplication.run(XxlApiApplication.class,args);
-      }
-        }
+        SpringApplication.run(XxlApiApplication.class, args);
+    }
+}
